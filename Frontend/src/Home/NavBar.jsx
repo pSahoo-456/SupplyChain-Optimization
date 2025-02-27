@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { useAuthStore } from "../contentStore/authStore";
+import { NavLink } from "react-router-dom";
 
 function NavBar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -19,10 +20,10 @@ const handleSignOut=()=>{
           </div>
 
           {/* Desktop Menu */}
-          <ul className="flex  space-x-6 text-xl font-semibold mr-36">
-            <li className="hover:text-green-400 transition-all ease-in-out duration-300 hover:scale-110">
+          <ul className="flex  space-x-6 text-md font-semibold mr-36">
+            <NavLink to={'/dashboard'}  className="hover:text-green-400 transition-all ease-in-out duration-300 hover:scale-110">
               Dashboard
-            </li>
+            </NavLink>
             <li className="hover:text-green-400 transition-all ease-in-out duration-300 hover:scale-110">
               Optimization
             </li>

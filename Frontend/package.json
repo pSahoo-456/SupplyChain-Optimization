@@ -12,6 +12,7 @@
   "dependencies": {
     "@tailwindcss/vite": "^4.0.7",
     "axios": "^1.7.9",
+    "framer-motion": "^12.4.7",
     "lucide-react": "^0.475.0",
     "qrcode.react": "^4.2.0",
     "react": "^19.0.0",
@@ -21,6 +22,7 @@
     "react-router-dom": "^7.1.5",
     "react-slick": "^0.30.3",
     "react-toast": "^1.0.3",
+    "recharts": "^2.15.1",
     "slick-carousel": "^1.8.1",
     "swiper": "^11.2.4",
     "tailwind-scrollbar-hide": "^2.0.0",

@@ -1,3 +1,4 @@
+import { FacebookIcon, Instagram, Linkedin, Twitter } from "lucide-react";
 import React from "react";
 
 function Footer() {
@@ -7,36 +8,16 @@ function Footer() {
         <div className="container mx-auto grid md:grid-cols-4 gap-8 px-6">
           {/* Company Info */}
           <div>
-            <h2 className="text-2xl font-bold text-yellow-400">kariez</h2>
+            <h2 className="text-2xl font-bold text-yellow-400">EcoTrack</h2>
             <p className="mt-2 text-gray-400">
               Lorem ipsum dolor amet consectetur adipiscing elit integer.
             </p>
-            <div className="flex space-x-4 mt-4">
-              <a
-                href="#"
-                className="border border-gray-600 p-2 rounded-full hover:text-yellow-400"
-              >
-                F
-              </a>
-              <a
-                href="#"
-                className="border border-gray-600 p-2 rounded-full hover:text-yellow-400"
-              >
-                X
-              </a>
-              <a
-                href="#"
-                className="border border-gray-600 p-2 rounded-full hover:text-yellow-400"
-              >
-                In
-              </a>
-              <a
-                href="#"
-                className="border border-gray-600 p-2 rounded-full hover:text-yellow-400"
-              >
-                Ig
-              </a>
-            </div>
+            <ul className="flex space-x-4 mt-4">
+             <li><FacebookIcon/></li>
+             <li><Twitter/></li>
+             <li><Linkedin/></li>
+             <li><Instagram/></li>
+            </ul>
           </div>
 
           {/* Company Links */}

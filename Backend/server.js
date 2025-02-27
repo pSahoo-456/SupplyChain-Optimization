@@ -4,7 +4,7 @@ import cors from 'cors'
 import cookieParser from 'cookie-parser'
 import { connectDB } from './config/connectDb.js'
 import authRouter from './routes/auth.router.js'
-import productRoute from './routes/product.router.js'
+import travelledRoute from './routes/logistics.router.js'
 const app=express()
 app.use(cors())
 app.use(cors({
@@ -17,9 +17,7 @@ app.use(express.json())
 app.use(cookieParser())
 
 app.use('/api/v1/auth',authRouter)
-app.use('/api/v1/product',productRoute)
-
-
+app.use('/api/v1/product',travelledRoute)
 
 const port=ENV_VARS.PORT
 app.listen(port,()=>{
