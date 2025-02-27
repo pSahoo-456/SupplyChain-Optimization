@@ -7,6 +7,7 @@ import Signup from './Authentication/Signup';
 import { Loader } from 'lucide-react';
 import Login from './Authentication/Login';
 import { useAuthStore} from './contentStore/authStore.js';
+import Home from './Home/Home.jsx';
 // import { useProductStore } from './contentStore/productStore.js';
 
 function App() {
@@ -29,7 +30,7 @@ if (isChekingAuth) {
   return (
  <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Layout />}></Route>
+        <Route path="/" element={<Home />}></Route>
         <Route path="/signup" element={!user?<Signup/>:<Navigate to={"/"} />} />
         <Route path="/signin" element={!user?<Login />:<Navigate to={"/"} />} />
       </Routes>
