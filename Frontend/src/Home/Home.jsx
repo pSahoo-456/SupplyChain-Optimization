@@ -6,7 +6,7 @@ import NavBar from "./NavBar";
 import HomeSlider from "./HomeSlider";
 
 function Home() {
-  const { user } = useAuthStore();
+   const { user } = useAuthStore();
   return !user ? (
     <LandingPage />
   ) : (

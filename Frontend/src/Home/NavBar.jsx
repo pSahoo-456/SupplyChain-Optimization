@@ -1,35 +1,42 @@
 import React, { useState } from "react";
 import { Menu, X } from "lucide-react";
+import { useAuthStore } from "../contentStore/authStore";
 
 function NavBar() {
   const [isOpen, setIsOpen] = useState(false);
-
+  const {logout}=useAuthStore()
+const handleSignOut=()=>{
+  console.log('Heyyyy')
+  logout()
+}
   return (
     <>
       <nav className="bg-gray-900 text-white p-4 shadow-md">
         <div className="container mx-auto flex justify-between items-center">
           {/* Logo */}
-          <div className="text-3xl font-bold text-green-400 ml-11">EcoTrack</div>
+          <div className="text-3xl font-bold text-green-400 ml-11">
+            EcoTrack
+          </div>
 
           {/* Desktop Menu */}
-          <ul className="flex  space-x-6 text-xl font-semibold ">
-            <li className="hover:text-green-400 transition-all ease-in-out duration-300 hover:scale-110">             
-                Dashboard
+          <ul className="flex  space-x-6 text-xl font-semibold mr-36">
+            <li className="hover:text-green-400 transition-all ease-in-out duration-300 hover:scale-110">
+              Dashboard
             </li>
             <li className="hover:text-green-400 transition-all ease-in-out duration-300 hover:scale-110">
-                Optimization
+              Optimization
             </li>
             <li className="hover:text-green-400 transition-all ease-in-out duration-300 hover:scale-110">
-
-                Suppliers
-            </li>
-            <li  className="hover:text-green-400 transition-all ease-in-out duration-300 hover:scale-110">
-                Reports
+              Suppliers
             </li>
             <li className="hover:text-green-400 transition-all ease-in-out duration-300 hover:scale-110">
-                Contact
+              Reports
+            </li>
+            <li className="hover:text-green-400 transition-all ease-in-out duration-300 hover:scale-110">
+              Contact
             </li>
           </ul>
+          <button onClick={handleSignOut} className=" absolute right-7 bg-red-700 hover:bg-red-800 p-1 rounded-4xl px-4">Signout</button>
 
           {/* Mobile Menu Button */}
           <button className="md:hidden" onClick={() => setIsOpen(!isOpen)}>
@@ -66,7 +73,6 @@ function NavBar() {
             </li>
           </ul>
         )}
-            
       </nav>
     </>
   );

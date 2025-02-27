@@ -6,9 +6,9 @@ function App() {
     <div className="min-h-screen ">
       {/* Hero Section */}
       <div className="relative overflow-hidden">
-        <div className="absolute inset-0 bg-gray-500">
+        <div className="absolute inset-0 opacity-50 bg-gray-900">
           <img
-            src="https://images.unsplash.com/photo-1498925008800-019c7d59d903?auto=format&fit=crop&q=80"
+            src="./truck1.bmp"
             alt="Forest background"
             className="w-full h-full object-cover opacity-20"
           />
