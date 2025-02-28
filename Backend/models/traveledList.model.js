@@ -1,40 +1,36 @@
-const mongoose = require("mongoose");
-
-const logisticsSchema = new mongoose.Schema({
-    pickupLocation: {
-        address: { type: String, required: true },
-        city: { type: String, required: true },
-        state: { type: String, required: true },
-        country: { type: String, required: true },
-        coordinates: {
-            lat: { type: Number, required: true },
-            lng: { type: Number, required: true },
-        },
+import mongoose from 'mongoose'
+const LogisticsSchema = new mongoose.Schema(
+  {
+    sourceLocation: {
+      type:String,
+      required: true,
     },
-    dropLocation: {
-        address: { type: String, required: true },
-        city: { type: String, required: true },
-        state: { type: String, required: true },
-        country: { type: String, required: true },
-        coordinates: {
-            lat: { type: Number, required: true },
-            lng: { type: Number, required: true },
-        },
+    destinationLocation: {
+      type:String,
+      required: true,
     },
     vehicleType: {
         type: String,
-        enum: ["Truck", "Van", "Bike", "Ship", "Air Cargo"],
+        enum: [
+          "Tata Prima",
+          "BharatBenz",
+          "Mahindra Blazo X 55",
+          "Ashok Leyland Partner",
+          "Eicher",
+        ], // Allowed vehicle types
         required: true,
     },
     cargoWeight: {
-        type: Number,
-        required: true,
-        min: 1, // Minimum 1kg cargo
-        max: 50000, // Maximum weight (adjust as needed)
+      type: Number,
+      required: true,
+      min: 0,
     },
-    createdAt: { type: Date, default: Date.now },
-});
+    createdAt: {
+      type: Date,
+      default: Date.now,
+    },
+  },
+  { timestamps: true }
+);
 
-const Logistics = mongoose.model("Logistics", logisticsSchema);
-
-module.exports = Logistics;
+export const Logistics = mongoose.model("Logistics", LogisticsSchema);

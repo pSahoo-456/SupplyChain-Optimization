@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
-import { Layout } from './Pages/Layout';
+// import { Layout } from './Pages/Reports.jsx';
 // import { Dashboard } from './VendorPage/Dashboard';
 // import { Products } from './VendorPage/Products';
 import Signup from './Authentication/Signup';
@@ -9,6 +9,8 @@ import Login from './Authentication/Login';
 import { useAuthStore} from './contentStore/authStore.js';
 import Home from './Home/Home.jsx';
 import Dashboard from './Pages/Dashboard.jsx';
+import RouteOptimization from './Pages/RouteOptimization.jsx';
+import Reports from './Pages/Reports.jsx';
 // import { useProductStore } from './contentStore/productStore.js';
 
 function App() {
@@ -33,6 +35,8 @@ if (isChekingAuth) {
       <Routes>
         <Route path="/" element={<Home />}/>
         <Route path="/dashboard" element={<Dashboard/>}/>
+        <Route path="/reports" element={<Reports/>}/>
+        <Route path="/optimization" element={<RouteOptimization/>}/>
         <Route path="/signup" element={!user?<Signup/>:<Navigate to={"/"} />} />
         <Route path="/signin" element={!user?<Login />:<Navigate to={"/"} />} />
       </Routes>

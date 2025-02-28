@@ -22,8 +22,8 @@ export const signup = async (req, res) =>{
         {
             return res.status(400).json({ status: false, message: 'email address already exist !!!' })
         }
-
-        if (!(password.length > 6))
+console.log('till password')
+        if (password.length < 6)
             return res.status(400).json({ status: false, message: 'password has less than 6 character !!' })
 
         //Its is for store the password in  hashed way in Database
@@ -38,6 +38,7 @@ export const signup = async (req, res) =>{
             }
         )
         //generate Token
+        
         generateDefaultToken(newUser._id, res)
 
         //to save the data in data base

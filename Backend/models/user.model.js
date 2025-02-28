@@ -12,9 +12,9 @@ const userScema=new mongoose.Schema({
         type:String,
         required:true,
     },
-    travelList:{
-        type:Array,
-        default:[]
-    }
+    travelList:[  {
+        type: Array, // Reference to Logistics collection
+        default:[], // Model name of referenced schema
+      },]
 })
 export const User=mongoose.model('user',userScema)

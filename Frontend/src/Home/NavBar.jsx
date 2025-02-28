@@ -5,39 +5,50 @@ import { NavLink } from "react-router-dom";
 
 function NavBar() {
   const [isOpen, setIsOpen] = useState(false);
-  const {logout}=useAuthStore()
-const handleSignOut=()=>{
-  console.log('Heyyyy')
-  logout()
-}
+  const { logout } = useAuthStore();
+  const handleSignOut = () => {
+    console.log("Heyyyy");
+    logout();
+  };
   return (
     <>
-      <nav className="bg-gray-900 text-white p-4 shadow-md">
-        <div className="container mx-auto flex justify-between items-center">
+      <nav className="bg-gray-900 text-white shadow-md py-6">
+        <div className="container flex justify-between items-center">
           {/* Logo */}
           <div className="text-3xl font-bold text-green-400 ml-11">
-            EcoTrack
+            Debadarsana Consultant Pvt.ltd
           </div>
 
           {/* Desktop Menu */}
           <ul className="flex  space-x-6 text-md font-semibold mr-36">
-            <NavLink to={'/dashboard'}  className="hover:text-green-400 transition-all ease-in-out duration-300 hover:scale-110">
-              Dashboard
+            <NavLink
+              to={"/"}
+              className="hover:text-green-400 transition-all ease-in-out duration-300 hover:scale-110"
+            >
+              Home
             </NavLink>
-            <li className="hover:text-green-400 transition-all ease-in-out duration-300 hover:scale-110">
+            <NavLink
+              to={"/optimization"}
+              className="hover:text-green-400 transition-all ease-in-out duration-300 hover:scale-110"
+            >
               Optimization
-            </li>
-            <li className="hover:text-green-400 transition-all ease-in-out duration-300 hover:scale-110">
+            </NavLink>
+            <NavLink className="hover:text-green-400 transition-all ease-in-out duration-300 hover:scale-110">
               Suppliers
-            </li>
-            <li className="hover:text-green-400 transition-all ease-in-out duration-300 hover:scale-110">
+            </NavLink>
+            <NavLink to={'/reports'} className="hover:text-green-400 transition-all ease-in-out duration-300 hover:scale-110">
               Reports
-            </li>
+            </NavLink>
             <li className="hover:text-green-400 transition-all ease-in-out duration-300 hover:scale-110">
               Contact
             </li>
           </ul>
-          <button onClick={handleSignOut} className=" absolute right-7 bg-red-700 hover:bg-red-800 p-1 rounded-4xl px-4">Signout</button>
+          <button
+            onClick={handleSignOut}
+            className=" absolute right-7 bg-red-700 hover:bg-red-800 p-1 rounded-4xl px-4"
+          >
+            Signout
+          </button>
 
           {/* Mobile Menu Button */}
           <button className="md:hidden" onClick={() => setIsOpen(!isOpen)}>
